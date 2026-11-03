@@ -1,7 +1,7 @@
 """Animate an AI+RES (rare-event sampling) forecast of the June 2021 Pacific Northwest heat dome.
 
 64 FourCastNet3 walkers start on June 7, 21 days before the peak. Every 3 days from day 6
-to day 15, FourCastNet3 forecasts score each walker on how hot the June 22-28 week looks
+to day 15, SFNO forecasts score each walker on how hot the June 22-28 week looks
 from its current state (not how hot it is now). High scorers are cloned and low scorers are
 killed (Diffusion
 Monte Carlo, after Lancelin et al., arXiv:2510.27066).
@@ -9,7 +9,7 @@ Monte Carlo, after Lancelin et al., arXiv:2510.27066).
 Left: 2 m temperature anomaly along the lineage of the walker with the hottest final week.
 Right: PNW box index of every walker, with killed branches fading out at each resampling.
 
-The run (tag fcn3res1) lives in my private S2S_ExtremeWeather repo, so this only runs where
+The run (tag sfno1) lives in my private S2S_ExtremeWeather repo, so this only runs where
 that repo is checked out:
 
     uv run --with xarray --with netcdf4 --with matplotlib --with cartopy \
@@ -32,7 +32,7 @@ from matplotlib.lines import Line2D
 from matplotlib.patches import Rectangle
 
 S2S = Path(sys.argv[1]).expanduser()
-RUN = S2S / "runs/aires/PNW_HeatDome_2021/res/fcn3res1"
+RUN = S2S / "runs/aires/PNW_HeatDome_2021/res/sfno1"
 OUT = Path(__file__).resolve().parent.parent / "assets"
 MAP_LAT, MAP_LON = (31.0, 50.0), (235.0, 258.0)
 SEG_STEPS, N_SEG = 12, 7  # 6 h steps per 3-day segment
@@ -205,7 +205,7 @@ def render(theme, anim, parents, best_line, fields, a_l, obs, direct):
         lead_now = n / 4
         k_now = (n - 1) // SEG_STEPS + 1
         mesh.set_array(fields.isel(time=n - 1).values.ravel())
-        stamp.set_text(f"64 FourCastNet3 walkers, resampled on FCN3 forecasts of the Jun 22-28 week"
+        stamp.set_text(f"64 FourCastNet3 walkers, resampled on SFNO forecasts of the Jun 22-28 week"
                        f" · lead {lead_now:.2f} d")
         for k in range(1, k_now + 1):
             x, y = seg_xy[k]

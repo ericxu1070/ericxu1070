@@ -5,10 +5,10 @@ I'm doing a one-year M.S. in Scientific Computing and Applied Mathematics at UC 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/aires-dark.gif">
   <source media="(prefers-color-scheme: light)" srcset="assets/aires-light.gif">
-  <img alt="Rare-event sampling forecast of the June 2021 Pacific Northwest heat dome: 64 FourCastNet3 walkers are cloned and killed every 3 days, and most end up reaching the observed heat" src="assets/aires-light.gif" width="100%">
+  <img alt="Rare-event sampling forecast of the June 2021 Pacific Northwest heat dome: 64 FourCastNet3 walkers are cloned and killed every 3 days on SFNO forecast scores, and 27 end up reaching the observed heat" src="assets/aires-light.gif" width="100%">
 </picture>
 
-A run of my AI+RES pipeline: 64 FourCastNet3 walkers start on June 7, 2021, three weeks before the Pacific Northwest heat dome. Every 3 days, FourCastNet3 forecasts score each walker on how hot June 22-28 will be, and the best-scored walkers are cloned while the rest are killed ([Lancelin et al., 2025](https://arxiv.org/abs/2510.27066)). 36 of 64 walkers reach the observed week (+7.7 °C). A plain 24-member ensemble from the same start gets 1.
+A run of my AI+RES pipeline: 64 FourCastNet3 walkers start on June 7, 2021, three weeks before the Pacific Northwest heat dome. Every 3 days, SFNO forecasts score each walker on how hot June 22-28 will be, and the best-scored walkers are cloned while the rest are killed ([Lancelin et al., 2025](https://arxiv.org/abs/2510.27066)). 27 of 64 walkers reach the observed week (+7.7 °C). A plain 24-member ensemble from the same start gets 1.
 
 **Projects**
 - [DeepSEA-Transfer-Learning](https://github.com/ericxu1070/DeepSEA-Transfer-Learning): fine-tuning DeepSEA, a genomic model trained on human data, on mouse data
