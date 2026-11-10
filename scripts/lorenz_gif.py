@@ -20,7 +20,7 @@ colors = ["#e4572e", "#f3a712", "#29bf12", "#4ea5d9", "#a663cc"]
 steps = np.linspace(TAIL, N - 1, FRAMES).astype(int)
 
 for theme, bg, ghost in [("light", "#ffffff", "#d0d0d0"), ("dark", "#0d1117", "#30363d")]:
-    fig, ax = plt.subplots(figsize=(8, 3.6), dpi=100)
+    fig, ax = plt.subplots(figsize=(5, 2.25), dpi=100)
     fig.patch.set_facecolor(bg)
     ax.set_facecolor(bg)
     ax.set_axis_off()
